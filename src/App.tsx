@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { getIdentifier } from './util/identification';
+import CrowButton from './CrowButton';
+import CrowChart from './CrowChart';
 
 function App() {
   const identifier = getIdentifier();
@@ -12,6 +14,10 @@ function App() {
           Current identifier is: '{identifier}'.
         </p>
       </header>
+      <CrowChart />
+      <footer>
+        <CrowButton />
+      </footer>
     </div>
   );
 }

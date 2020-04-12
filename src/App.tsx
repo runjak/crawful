@@ -1,11 +1,15 @@
 import React from 'react';
 
+import { getIdentifier } from './util/identification';
+
 function App() {
+  const identifier = getIdentifier();
+
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Current identifier is: '{identifier}'.
         </p>
       </header>
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getIdentifier } from './util/identification';
 import CrowButton from './CrowButton';
-import CrowChart from './CrowChart';
+import RecentCrows from './RecentCrows';
 
 function App() {
   const identifier = getIdentifier();
@@ -14,7 +14,7 @@ function App() {
           Current identifier is: '{identifier}'.
         </p>
       </header>
-      <CrowChart />
+      <RecentCrows />
       <footer>
         <CrowButton />
       </footer>

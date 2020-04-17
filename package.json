@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "firebase": "./node_modules/.bin/firebase"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +45,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.149",
     "@types/recharts": "^1.8.9",
-    "@types/uuid": "^7.0.2"
+    "@types/uuid": "^7.0.2",
+    "firebase-tools": "^8.1.0"
   }
 }

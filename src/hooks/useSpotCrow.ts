@@ -12,7 +12,7 @@ export const useSpotCrow = (): [boolean, () => void] => {
     setSpotting(true);
     await spotCrow();
     setSpotting(false);
-  }, [isSpotting,setSpotting])
+  }, [isSpotting,setSpotting]);
 
   return [isSpotting, spot];
 };

@@ -5,14 +5,14 @@ export const useSpotCrow = (): [boolean, () => void] => {
   const [isSpotting, setSpotting] = useState(false);
 
   const spot = useCallback(async () => {
-    if(isSpotting) {
+    if (isSpotting) {
       return;
     }
 
     setSpotting(true);
     await spotCrow();
     setSpotting(false);
-  }, [isSpotting,setSpotting]);
+  }, [isSpotting, setSpotting]);
 
   return [isSpotting, spot];
 };

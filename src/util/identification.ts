@@ -1,9 +1,9 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
-const localStorageKey = 'crawful-identifier';
+const localStorageKey = "crawful-identifier";
 
 export const getIdentifier = (): string => {
-  const currentIdentifier = localStorage.getItem(localStorageKey)
+  const currentIdentifier = localStorage.getItem(localStorageKey);
 
   if (currentIdentifier) {
     return currentIdentifier;
@@ -13,4 +13,4 @@ export const getIdentifier = (): string => {
   localStorage.setItem(localStorageKey, newIdentifier);
 
   return newIdentifier;
-}
+};

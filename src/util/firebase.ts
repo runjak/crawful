@@ -1,7 +1,7 @@
-import { getDatabase } from '../firebase/config';
-import { getIdentifier } from './identification';
+import { getDatabase } from "../firebase/config";
+import { getIdentifier } from "./identification";
 
-export const crows = getDatabase().ref('crows');
+export const crows = getDatabase().ref("crows");
 
 export type CrowEvent = {
   content: string;
@@ -10,9 +10,9 @@ export type CrowEvent = {
 };
 
 const mkCrowEvent = (identifier: string): CrowEvent => ({
-  content: 'spotted a crow',
+  content: "spotted a crow",
   timestamp: Date.now(),
-  identifier
+  identifier,
 });
 
 export const spotCrow = async (): Promise<void> => {
@@ -25,8 +25,8 @@ export let crowEvents: Array<CrowEvent> = [];
 
 export type CrowEventListener = (crowEvent: CrowEvent) => void;
 
-crows.on('value', (dataSnapshot): void => {
+crows.on("value", (dataSnapshot): void => {
   const things = dataSnapshot.val();
-  console.log({ crowEvent: things })
+  console.log({ crowEvent: things });
   crowEvents = Object.values(things);
 });

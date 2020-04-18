@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react';
-import groupBy from 'lodash/groupBy';
+import { useState, useEffect } from "react";
+import groupBy from "lodash/groupBy";
 
-import { crowEvents } from '../util/firebase';
+import { crowEvents } from "../util/firebase";
 
-const sleep = (ms: number): Promise<void> => new Promise(
-  (resolve) => {
+const sleep = (ms: number): Promise<void> =>
+  new Promise((resolve) => {
     window.setTimeout(resolve, ms);
-  }
-);
+  });
 
 export type CrowBucket = { identifier: string; count: number };
 export type CrowBuckets = Array<CrowBucket>;
@@ -16,7 +15,10 @@ const crowBuckets = (): CrowBuckets => {
   const groupedCrowEvents = groupBy(crowEvents, ({ identifier }) => identifier);
 
   return Object.entries(groupedCrowEvents).map(
-    ([identifier, entries]): CrowBucket => ({ identifier, count: entries.length })
+    ([identifier, entries]): CrowBucket => ({
+      identifier,
+      count: entries.length,
+    })
   );
 };
 
@@ -32,4 +34,3 @@ export const useCrowBuckets = (): CrowBuckets => {
 
   return buckets;
 };
-

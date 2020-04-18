@@ -1,4 +1,4 @@
-import * as firebase from 'firebase';
+import * as firebase from "firebase";
 
 const config = {
   apiKey: "AIzaSyBKwElD9ZE2l7nCbxYH_S3xZbITYrXI4hY",
@@ -7,8 +7,8 @@ const config = {
   projectId: "crawful-fc155",
   storageBucket: "crawful-fc155.appspot.com",
   messagingSenderId: "1091437101456",
-  appId: "1:1091437101456:web:35244d27fa7142cbddf315"
-}
+  appId: "1:1091437101456:web:35244d27fa7142cbddf315",
+};
 
 type App = firebase.app.App;
 
@@ -32,4 +32,4 @@ export const getDatabase = (): Database => {
   }
 
   return database;
-}
+};

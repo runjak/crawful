@@ -1,23 +1,14 @@
 import React from 'react';
-
-import { getIdentifier } from './util/identification';
-import CrowButton from './CrowButton';
-import RecentCrows from './RecentCrows';
+import UserStatus from './UserStatus';
+import SignIn from './SignIn';
 
 function App() {
-  const identifier = getIdentifier();
-
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Current identifier is: '{identifier}'.
-        </p>
+        <UserStatus />
       </header>
-      <RecentCrows />
-      <footer>
-        <CrowButton />
-      </footer>
+      <SignIn />
     </div>
   );
 }

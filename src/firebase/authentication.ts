@@ -34,3 +34,18 @@ export const setDisplayName = async (displayName: string) => {
     await credentials.user?.updateProfile({ displayName });
   }
 };
+
+export const signOut = async () => {
+  const auth = getAuth();
+  const { currentUser } = auth;
+
+  if (!currentUser) {
+    return;
+  }
+
+  if (currentUser.isAnonymous) {
+    await currentUser.delete();
+  }
+
+  await auth.signOut();
+};

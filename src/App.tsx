@@ -1,6 +1,6 @@
 import React from 'react';
 import UserStatus from './UserStatus';
-import SignIn from './SignIn';
+import UserInfo from './UserInfo';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <UserStatus />
       </header>
-      <SignIn />
+      <UserInfo />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import * as firebase from "firebase";
+import memoize from "lodash/memoize";
 
 const config = {
   apiKey: "AIzaSyBKwElD9ZE2l7nCbxYH_S3xZbITYrXI4hY",
@@ -10,26 +11,8 @@ const config = {
   appId: "1:1091437101456:web:35244d27fa7142cbddf315",
 };
 
-type App = firebase.app.App;
+export const getApp = memoize(() => firebase.initializeApp(config));
 
-let app: App | null = null;
+export const getDatabase = memoize(() => firebase.database(getApp()));
 
-export const getApp = (): App => {
-  if (!app) {
-    app = firebase.initializeApp(config);
-  }
-
-  return app;
-};
-
-type Database = firebase.database.Database;
-
-let database: Database | null = null;
-
-export const getDatabase = (): Database => {
-  if (!database) {
-    database = firebase.database(getApp());
-  }
-
-  return database;
-};
+export const getAuth = memoize(() => getApp().auth());
